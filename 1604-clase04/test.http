@@ -2,14 +2,14 @@
 
 # GET - Estamos probando x ruta
 
-
 GET http://localhost:3000
-
 
 # GET - estamos probando otra ruta
 
+
 GET http://localhost:3000/usuarios
 
-# GET . peticion del ies
+# GET - peticion del ies
+
 
 GET https://ies21.edu.ar/
