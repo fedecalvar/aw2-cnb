@@ -1,0 +1,6 @@
+
+### ------
+
+# GET - Estamos probando la ruta usuarios
+
+GET http://localhost:3000/usuarios

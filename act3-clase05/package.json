@@ -1,0 +1,12 @@
+{
+  "name": "act3-clase05",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "scripts": {
+    "dev": "node index.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
