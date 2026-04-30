@@ -1,0 +1,12 @@
+body{
+    background: blue;
+    color: yellow;
+    margin: auto 750px;
+    font-family: "Nosifer", sans-serif;
+    font-weight: 400;
+}
+
+.titulo{
+    text-align: center;
+    text-transform: uppercase;
+}

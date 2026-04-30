@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>URGENTE</title>
+</head>
+<body>
+    <h1 class="titulo">La pagina bostera!!!!!</h1>
+    <h1>Dybala a Boca!!!!</h1>
+    <p>Lo confirmo el pollo vignolo en <span>F90</span></p>
+
+    <img  width=360 src="https://pbs.twimg.com/media/G8TZsBeWoAc5flI?format=png&name=small" alt="">
+
+    <video src="https://www.youtube.com/watch?v=pmNOjPThjvc" width="560" height="360" autoplay loop poster="https://media.planetabj.com/wp-content/uploads/sites/9/2026/04/24130237/dybala-4-740x416.webp" controls ></video>
+
+    
+    <!-- <img src="./recursos/img/**********" alt=""> -->
+    <script>
+        async function consumirApi(){
+            const respuesta = await fetch('https://69f00888112e1b968e2526de.mockapi.io/api/v1/noticierobostero')
+            const bocajuniors = await respuesta.json()
+            console.log(bocajuniors)
+            bocajuniors.map((bocajunior)=>{
+                console.log(bocajunios.imagen)
+            })
+        }
+
+        consumirApi();
+        
+    </script>
+
+</body>
+</html>
