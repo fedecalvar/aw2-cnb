@@ -1,29 +1,31 @@
 import express from 'express'
 
 const PUERTO = 3000
-
 const app = express()
 
-const verificarCodigo = async (req, res, next) => {
+// Definir middleware
+const validacionCodigo = async (req, res, next) => {
     try {
-        const resp = await fetch('http://localhost:4321/usuario')
-        const data = await resp.json()
 
-        const codigoConsumido = data && data.codigo
-        const codigoParam = isNaN(Number(req.params.codigo)) ? req.params.codigo : Number(req.params.codigo)
-
-        if (codigoConsumido == codigoParam) {
-            return next()
+        const codigo = Number(req.params.codigo)
+        // 1 - fetch ->
+        const respuesta = await fetch('http://localhost:4321/usuario')
+        const usuario = await respuesta.json()
+        // objeto
+        if (usuario.codigo === codigo) {
+            next()
+        } else {
+            res.status(401).json({ mensaje: 'El codigo es incorrecto' })
         }
-
-        return res.status(400).json({ mensaje: 'El código es incorrecto' })
-    } catch (error) {
+    }catch(error){
         return res.status(500).json({ error: 'Error al consumir el servicio externo' })
     }
 }
 
-app.get('/:codigo', verificarCodigo, (req, res) => {
-    return res.status(200).json({ mensaje: 'El código es correcto' })
+// Definir ruta GET /:codigo
+// peticion -> middleware -> callback final
+app.get('/:codigo', validacionCodigo, (req, res) => {
+    res.status(200).json({ mensaje: 'El codigo es correcto' })
 })
 
-app.listen(PUERTO)
+app.listen(PUERTO, () => console.log(`Servidor corriendo en http://localhost:${PUERTO}`))

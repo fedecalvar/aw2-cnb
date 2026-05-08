@@ -1,12 +1,16 @@
 import express from 'express'
 
-const PUERTO = 3000;
+const PUERTO = 4321;
 
 const app = express()
 
-app.get('/:codigo', (req, res)=>{
+app.get('/:usuario', (req, res)=>{
     
-    res.status(200).json({mensaje:`El codigo es correcto`})
+    const usuario = {
+        codigo: 1222
+    }
+    res.json(usuario)
 })
 
 app.listen(PUERTO);
+
